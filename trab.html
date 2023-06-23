@@ -1,0 +1,33 @@
+<script>
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+function transposeMatrix(matrix) {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+
+  const transposedMatrix = Array(cols)
+    .fill()
+    .map(() => Array(rows));
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      transposedMatrix[j][i] = matrix[i][j];
+    }
+  }
+
+  return transposedMatrix;
+}
+
+const transposed = transposeMatrix(matrix);
+
+for (let k = 0; k < transposed.length; k++) {
+    document.write(`${transposed[k]} <br>`);
+}
+
+
+
+</script>
