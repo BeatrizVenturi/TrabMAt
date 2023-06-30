@@ -1,33 +1,37 @@
 <script>
-const matrix = [
+// matriz inicial
+  const matrix = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9]
 ];
 
-function transposeMatrix(matrix) {
+// contar o numero de colunas e linhas
+  function transposeMatrix(matrix) {
+
   const rows = matrix.length;
   const cols = matrix[0].length;
 
+// cria uma matriz igual a anterior vazia
   const transposedMatrix = Array(cols)
     .fill()
     .map(() => Array(rows));
 
+// preenche a matriz criada, ja transposta
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       transposedMatrix[j][i] = matrix[i][j];
     }
   }
-
+ // retorna a matriz transposta
   return transposedMatrix;
 }
 
-const transposed = transposeMatrix(matrix);
+  const transposed = transposeMatrix(matrix);
 
-for (let k = 0; k < transposed.length; k++) {
+  // for para deuxar bonito 
+  for (let k = 0; k < transposed.length; k++) {
     document.write(`${transposed[k]} <br>`);
 }
-
-
 
 </script>
